@@ -18,11 +18,33 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="eIF-nR-tUl"/>
+                    <navigationItem key="navigationItem" id="eIF-nR-tUl">
+                        <barButtonItem key="rightBarButtonItem" title="다음 예제" id="f1E-BM-OTb">
+                            <connections>
+                                <segue destination="XpX-o6-nKz" kind="show" id="zZt-ai-ZbQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="107.8125"/>
+        </scene>
+        <!--VC2-->
+        <scene sceneID="lxn-fw-nqu">
+            <objects>
+                <viewController id="XpX-o6-nKz" customClass="VC2" customModule="ExAutolayout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UUt-Bl-GoA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Byb-Q9-EGd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sAM-cd-o5T"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jab-V9-RF8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1601" y="115"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B93-2Y-Qp2">
