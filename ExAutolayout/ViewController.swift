@@ -9,35 +9,33 @@ import UIKit
 import SnapKit
 
 class ViewController: UIViewController {
-  private let leftLabel: UILabel = {
-    let label = UILabel()
-    label.text = "iOS 앱 개발 알아가기 jake 블로그 길고 긴 UILabel의 텍스트"
-    label.textColor = .white
-    label.backgroundColor = .blue
-    return label
+  private let button: UIButton = {
+    let button = UIButton()
+    button.setTitle("버튼", for: .normal)
+    button.setTitleColor(.white, for: .normal)
+    button.setTitleColor(.gray, for: .highlighted)
+    button.backgroundColor = .systemBlue
+    return button
   }()
-  private let rightLabel: UILabel = {
-    let label = UILabel()
-    label.text = "label 2 알아가기 jake 블로그 길고 긴 UILabel의 텍스트"
-    label.textColor = .white
-    label.backgroundColor = .orange
-    return label
-  }()
+  
+  private var buttonWidthConstraint: Constraint?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.view.addSubview(self.leftLabel)
-    self.view.addSubview(self.rightLabel)
-    
-    self.leftLabel.snp.makeConstraints {
-      $0.top.equalToSuperview().inset(56)
-      $0.left.equalToSuperview()
+    self.view.addSubview(self.button)
+    self.button.snp.makeConstraints {
+      $0.center.equalToSuperview()
+      self.buttonWidthConstraint = $0.width.equalTo(300).constraint
     }
-    self.rightLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
-    self.rightLabel.snp.makeConstraints {
-      $0.top.equalToSuperview().inset(56)
-      $0.left.equalTo(self.leftLabel.snp.right)
-      $0.right.equalToSuperview()
+    
+    self.button.addTarget(self, action:   #selector(didTapButton), for: .touchUpInside)
+  }
+  
+  @objc private func didTapButton() {
+    self.buttonWidthConstraint?.update(offset: 100)
+    UIView.animate(withDuration: 0.5) {
+      self.view.layoutIfNeeded()
     }
   }
 }
